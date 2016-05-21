@@ -1,0 +1,29 @@
+{% extends "node.html.twig" %}
+{#
+/**
+ * @file
+ * Article node type with different submitted info
+ */
+#}
+
+{% block submitted %}
+  {% if display_submitted %}
+    <footer class="{{ bundle }}__meta">
+      {{ author_picture }}
+      <div{{ author_attributes }} class="{{ bundle }}__submitted">
+
+        {{ date }}
+
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <div{{ content_attributes }} class="{{ bundle }}__content">
+
+    {{ content|without('field_image') }}
+
+  </div>
+{% endblock %}

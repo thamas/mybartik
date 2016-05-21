@@ -1,0 +1,9 @@
+/**
+ * @file
+ * Visual styles for mybartik's page-title component.
+ */
+
+.page-title {
+  font-size: 2em;
+  line-height: 1em;
+}
