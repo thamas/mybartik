@@ -10,6 +10,6 @@ Files to check:
 - menu.html.twig
 
 Related info:
-- http://twig.sensiolabs.org/documentation
-- https://www.drupal.org/node/2259531
-- https://medium.com/integral-vision/drupal-8-twig-add-custom-css-classes-to-menus-based-on-menu-name-35b50142521a#.2lg9fvoeq
+- [Twig Documentation](http://twig.sensiolabs.org/documentation)
+- [Set Twig Debug](https://www.drupal.org/node/2259531)
+- [Drupal 8 Twig: add custom CSS classes to menus (based on menu name)](https://medium.com/integral-vision/drupal-8-twig-add-custom-css-classes-to-menus-based-on-menu-name-35b50142521a#.2lg9fvoeq)
