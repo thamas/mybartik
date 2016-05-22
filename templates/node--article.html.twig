@@ -6,24 +6,19 @@
  */
 #}
 
-{% block submitted %}
+{% block node_submitted %}
   {% if display_submitted %}
-    <footer class="{{ bundle }}__meta">
-      {{ author_picture }}
+    <footer class="{{ bundle }}__meta"> {# Removed author_picture. #}
       <div{{ author_attributes }} class="{{ bundle }}__submitted">
-
-        {{ date }}
-
+        {{ date }} {# Removed author_name and the translateable string. #}
         {{ metadata }}
       </div>
     </footer>
   {% endif %}
 {% endblock %}
 
-{% block content %}
+{% block node_content %}
   <div{{ content_attributes }} class="{{ bundle }}__content">
-
     {{ content|without('field_image') }}
-
   </div>
 {% endblock %}

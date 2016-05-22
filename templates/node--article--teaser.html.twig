@@ -9,29 +9,19 @@
 {% block node %}
   <article{{ attributes.addClass(classes, 'clearfix' ) }}>
 
-
     {{ content.field_image }}
 
-
-    {% block submitted %}
+    {% block node_submitted %}
       {{ parent() }}
     {% endblock %}
 
-
-
-    {{ title_prefix }}
-    {% if not page %}
-    <h2{{ title_attributes .addClass(title_classes)}}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-    {% endif %}
-    {{ title_suffix }}
-
-
-    {% block content %}
+    {% block node_title %}
       {{ parent() }}
     {% endblock %}
 
+    {% block node_content %}
+      {{ parent() }}
+    {% endblock %}
 
   </article>
 {% endblock %}
