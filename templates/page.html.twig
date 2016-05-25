@@ -2,53 +2,7 @@
 /**
  * @file
  * mybartik's theme implementation to display a single page.
- *
- * The doctype, html, head and body tags are not in this template. Instead they
- * can be found in the html.html.twig template normally located in the
- * core/modules/system directory.
- *
- * Available variables:
- *
- * General utility variables:
- * - base_path: The base URL path of the Drupal installation. Will usually be
- *   "/" unless you have installed Drupal in a sub-directory.
- * - is_front: A flag indicating if the current page is the front page.
- * - logged_in: A flag indicating if the user is registered and signed in.
- * - is_admin: A flag indicating if the user has permission to access
- *   administration pages.
- *
- * Site identity:
- * - front_page: The URL of the front page. Use this instead of base_path when
- *   linking to the front page. This includes the language domain or prefix.
- *
- * Page content (in order of occurrence in the default page.html.twig):
- * - node: Fully loaded node, if there is an automatically-loaded node
- *   associated with the page and the node ID is the second argument in the
- *   page's path (e.g. node/12345 and node/12345/revisions, but not
- *   comment/reply/12345).
- *
- * Regions:
- * - page.header: Items for the header region.
- * - page.highlighted: Items for the highlighted region.
- * - page.primary_menu: Items for the primary menu region.
- * - page.secondary_menu: Items for the secondary menu region.
- * - page.featured_top: Items for the featured top region.
- * - page.content: The main content of the current page.
- * - page.sidebar_first: Items for the first sidebar.
- * - page.sidebar_second: Items for the second sidebar.
- * - page.featured_bottom_first: Items for the first featured bottom region.
- * - page.featured_bottom_second: Items for the second featured bottom region.
- * - page.featured_bottom_third: Items for the third featured bottom region.
- * - page.footer_first: Items for the first footer column.
- * - page.footer_second: Items for the second footer column.
- * - page.footer_third: Items for the third footer column.
- * - page.footer_fourth: Items for the fourth footer column.
- * - page.footer_fifth: Items for the fifth footer column.
- * - page.breadcrumb: Items for the breadcrumb region.
- *
- * @see template_preprocess_page()
- * @see html.html.twig
- */
+ **/
 #}
 <div id="page-wrapper">
   <div id="page">
@@ -90,27 +44,43 @@
             <aside class="section" role="complementary">
 
 
-
+              {# It works in node.html.twig only! #}
               {# {{ content.field_image }} <br><br> #}
 
+              {# It simply breaks the site. #}
               {# {{ node.field_image }} <br><br> #}
 
+              {# Doesn't do anything. #}
               {# {{ node.field_image.entity.0 }} <br><br> #}
 
+              {# This displays the relative URL of the image file. #}
               {# {{ file_url(node.field_image.entity.fileuri) }} <br><br> #}
 
-              <img src="{{ file_url(node.field_image.entity.fileuri) }}"><br><br>
+              {# So use the url in an img html tag. It displays the image
+              but we have no image styles. How do we add image style or styles
+              for responsive behavior? What to do if we have multiple images
+              in the image field?#}
+              {# <img src="{{ file_url(node.field_image.entity.fileuri) }}"><br><br> #}
 
-              {{ node.label }} <br><br>
+              {# This "label" is the node "title". Why "label" then?
+              Does not add h1 or h2 tags, just a string. #}
+              {# {{ node.label }} <br><br> #}
 
-              {{ node.field_text_simple.value }} <br><br>
+              {# If we have a simple (not formatted) text field, the walue can
+              be printed this way. No html tags. #}
+              {# {{ node.field_text_simple.value }} <br><br> #}
 
-              {{ node.created.value|date('Y. F d. – h.i' ) }} <br><br>
+              {# Timestamp of the node creation. |date() filter can be used to
+              format it. It lacks localization however.
+              The last update of the node is node.changed.value.  #}
+              {# {{ node.created.value|date('Y. F d. – h.i' ) }} <br><br> #}
 
-              {{ node.field_tags['#1'] }} <br><br>
+              {# Trying to print out content of the tags field. Does not work. #}
+              {# {{ node.field_tags['#1'] }} <br><br> #}
 
-              {{ node.body.value }} <br><br>
-
+              {# Content of the body field. Inner html tags are added because of
+              the use of |raw filter. But it is dangerous and not recommended! #}
+              {# {{ node.body.value|raw }} <br><br> #}
 
 
 
@@ -155,3 +125,53 @@
     </footer>
   </div>
 </div>
+
+{#
+/**
+* The doctype, html, head and body tags are not in this template. Instead they
+* can be found in the html.html.twig template normally located in the
+* core/modules/system directory.
+*
+* Available variables:
+*
+* General utility variables:
+* - base_path: The base URL path of the Drupal installation. Will usually be
+*   "/" unless you have installed Drupal in a sub-directory.
+* - is_front: A flag indicating if the current page is the front page.
+* - logged_in: A flag indicating if the user is registered and signed in.
+* - is_admin: A flag indicating if the user has permission to access
+*   administration pages.
+*
+* Site identity:
+* - front_page: The URL of the front page. Use this instead of base_path when
+*   linking to the front page. This includes the language domain or prefix.
+*
+* Page content (in order of occurrence in the default page.html.twig):
+* - node: Fully loaded node, if there is an automatically-loaded node
+*   associated with the page and the node ID is the second argument in the
+*   page's path (e.g. node/12345 and node/12345/revisions, but not
+*   comment/reply/12345).
+*
+* Regions:
+* - page.header: Items for the header region.
+* - page.highlighted: Items for the highlighted region.
+* - page.primary_menu: Items for the primary menu region.
+* - page.secondary_menu: Items for the secondary menu region.
+* - page.featured_top: Items for the featured top region.
+* - page.content: The main content of the current page.
+* - page.sidebar_first: Items for the first sidebar.
+* - page.sidebar_second: Items for the second sidebar.
+* - page.featured_bottom_first: Items for the first featured bottom region.
+* - page.featured_bottom_second: Items for the second featured bottom region.
+* - page.featured_bottom_third: Items for the third featured bottom region.
+* - page.footer_first: Items for the first footer column.
+* - page.footer_second: Items for the second footer column.
+* - page.footer_third: Items for the third footer column.
+* - page.footer_fourth: Items for the fourth footer column.
+* - page.footer_fifth: Items for the fifth footer column.
+* - page.breadcrumb: Items for the breadcrumb region.
+*
+* @see template_preprocess_page()
+* @see html.html.twig
+/
+#}
