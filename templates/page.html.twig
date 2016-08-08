@@ -34,7 +34,8 @@
           <section class="section">
             <a id="main-content" tabindex="-1"></a>
 
-            {# {{ kint() }} #}
+            {# Use kint to debufg variables EG. {{ kint(page.content) }} #}
+            {{ kint(node) }}
 
             {{ page.content }}
           </section>
@@ -79,6 +80,8 @@
 
               {# Trying to print out content of the tags field. Does not work. #}
               {# {{ node.field_tags['#1'] }} <br><br> #}
+
+              {# {{ node.field_tags.target_id }} <br><br> #}
 
               {# Content of the body field. Inner html tags are added because of
               the use of |raw filter. But it is dangerous and not recommended! #}

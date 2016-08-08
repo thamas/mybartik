@@ -7,10 +7,13 @@
 #}
 
 {% block node %}
+  {# Add a class. #}
   <article{{ attributes.addClass(classes, 'clearfix' ) }}>
 
+    {# Display image field here, before node title. #}
     {{ content.field_image }}
 
+    {# Display other part without changes. #}
     {% block node_submitted %}
       {{ parent() }}
     {% endblock %}

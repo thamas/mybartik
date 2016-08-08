@@ -5,6 +5,7 @@
  */
 #}
 
+{# Move node bundle (node type) to its own variable. #}
 {% set bundle = node.bundle|clean_class %}
 
 {%
@@ -21,9 +22,11 @@
 
 {{ attach_library('classy/node') }}
 
+{# Create twig block. #}
 {% block node %}
   <article{{ attributes.addClass(classes) }}>
     <header>
+      {# Create twig block. #}
       {% block node_title %}
         {{ title_prefix }}
         {% if not page %}
@@ -34,6 +37,7 @@
         {{ title_suffix }}
       {% endblock %}
 
+      {# Create twig block. #}
       {% block node_submitted %}
         {% if display_submitted %}
           <div class="node__meta">
@@ -47,6 +51,7 @@
       {% endblock %}
     </header>
 
+    {# Create twig block. #}
     {% block node_content %}
       <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
         {{ content }}
