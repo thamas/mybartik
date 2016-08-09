@@ -8,6 +8,7 @@ by default. #}
 {# By default, all Drupal field machine names start with "field_".
 This label doesn’t really bring any value to the BEM style class nameing so we
 remove it with the Twig replace filter.  #}
+{# The result will be eg. <div class="article__image">.  #}
 {% set classes = [
   bundle ~ '__' ~ field_name|replace({'field_' : ''})|clean_class
 ] %}

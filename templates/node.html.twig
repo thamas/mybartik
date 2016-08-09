@@ -19,7 +19,6 @@ Block element. The 'node' class is required for contextual edit links. #}
     node.isSticky() ? bundle ~ '--sticky',
     not node.isPublished() ? bundle ~ '--unpublished',
     'node',
-    'clearfix',
   ]
 %}
 {% set title_classes = [
@@ -42,7 +41,7 @@ Block element. The 'node' class is required for contextual edit links. #}
           </h2>
         {% endif %}
         {{ title_suffix }}
-      {% endblock %}
+      {% endblock node_title %}
 
       {# Create twig block. #}
       {% block node_submitted %}
@@ -55,7 +54,7 @@ Block element. The 'node' class is required for contextual edit links. #}
             {{ metadata }}
           </div>
         {% endif %}
-      {% endblock %}
+      {% endblock node_submitted %}
     </header>
 
     {# Create twig block. #}
@@ -63,10 +62,10 @@ Block element. The 'node' class is required for contextual edit links. #}
       <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
         {{ content }}
       </div>
-    {% endblock %}
+    {% endblock node_content %}
 
   </article>
-{% endblock %}
+{% endblock node %}
 
 {#
 /**

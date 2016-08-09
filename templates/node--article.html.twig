@@ -2,10 +2,12 @@
 {#
 /**
  * @file
- * Article node type with different submitted info
+ * Article node type with different submitted info.
  */
 #}
 
+{# Because this file extends a parent all of its HTML content must be within
+block tags. #}
 {% block node_submitted %}
   {% if display_submitted %}
     <footer class="{{ bundle }}__meta"> {# Removed author_picture. #}

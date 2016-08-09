@@ -13,11 +13,13 @@
     {# Display image field here, before node title. #}
     {{ content.field_image }}
 
-    {# Display other part without changes. #}
+    {# Display submitted date before title too, but using the same settings as
+    in parent template. #}
     {% block node_submitted %}
       {{ parent() }}
     {% endblock %}
 
+    {# Display other twig blocks using the same settings as in parent template. #}
     {% block node_title %}
       {{ parent() }}
     {% endblock %}
