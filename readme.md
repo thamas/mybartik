@@ -34,3 +34,4 @@ Related info:
 - [Twig Documentation](http://twig.sensiolabs.org/documentation)
 - [Set Twig Debug](https://www.drupal.org/node/2259531)
 - [Drupal 8 Twig: add custom CSS classes to menus (based on menu name)](https://medium.com/integral-vision/drupal-8-twig-add-custom-css-classes-to-menus-based-on-menu-name-35b50142521a#.2lg9fvoeq)
+- [Applying BEM inspired classes to your Drupal 8 theme](https://thejibe.com/articles/applying-bem-inspired-classes-to-your-drupal-8-theme)
