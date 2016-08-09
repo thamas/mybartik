@@ -18,7 +18,7 @@
 {% endblock %}
 
 {% block node_content %}
-  {# Using our bundle variable here. #}
+  {# Using our bundle variable and BEM element class naming here. #}
   <div{{ content_attributes }} class="{{ bundle }}__content">
     {# Render content without image field. #}
     {{ content|without('field_image') }}

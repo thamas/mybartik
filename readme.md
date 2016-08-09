@@ -3,6 +3,8 @@
 Fork of Drupal 8's Bartik theme for my theming presentations.  
 (Do Not use Bartik as a base theme in real projects, 'cause updates may break
 your theme!')
+It looks broken because markup was changed but CSS styling was not created for
+the new classes! :)
 
 - https://www.drupal.hu/konferencia/2016/program#smink
 - http://2016.drupalaton.hu/schedule#speaker-151
@@ -10,6 +12,7 @@ your theme!')
 Files to check:
 - node.html.twig
   - added new variable: bundle
+  - use BEM style class naming where block is the content type
   - added embedded twig block, to split up template to smaller parts
 - node--article.html.twig
   - new file, extends node.html.twig
@@ -22,6 +25,10 @@ Files to check:
 - menu.html.twig
   - new file
   - added custom css classes (article link below)
+- mybartik.theme
+  - preprocess to have "bundle" variable in field.html.twig
+- field.html.twig
+  - new file to add "BEM Element" style class to fields
 
 Related info:
 - [Twig Documentation](http://twig.sensiolabs.org/documentation)

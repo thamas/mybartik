@@ -1,0 +1,15 @@
+{% extends "@stable/field/field.html.twig" %}
+{# Becasue we are not altering the markup of the field template, here we just
+apply our classes while we @extend stable theme's field.twig.html. #}
+
+{# Create classes array #}
+{# The variable "bundle" is added in preprocess because it is not provided
+by default. #}
+{# By default, all Drupal field machine names start with "field_".
+This label doesn’t really bring any value to the BEM style class nameing so we
+remove it with the Twig replace filter.  #}
+{% set classes = [
+  bundle ~ '__' ~ field_name|replace({'field_' : ''})|clean_class
+] %}
+
+{% set attributes = attributes.addClass(classes) %}

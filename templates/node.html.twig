@@ -6,19 +6,25 @@
 #}
 
 {# Move node bundle (node type) to its own variable. #}
+{# clean_class creates "long-machine-name" from "long_machine_name" #}
 {% set bundle = node.bundle|clean_class %}
 
+{# Create classes array. BEM style class names where node type (bundle) is the
+Block element. The 'node' class is required for contextual edit links. #}
 {%
   set classes = [
+    bundle,
+    view_mode ? bundle ~ '--display-' ~ view_mode|clean_class,
+    node.isPromoted() ? bundle ~ '--promoted',
+    node.isSticky() ? bundle ~ '--sticky',
+    not node.isPublished() ? bundle ~ '--unpublished',
     'node',
-    'node--type-' ~ bundle,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
   ]
 %}
+{% set title_classes = [
+  bundle ~ '__title'
+] %}
 
 {{ attach_library('classy/node') }}
 
@@ -30,7 +36,8 @@
       {% block node_title %}
         {{ title_prefix }}
         {% if not page %}
-          <h2{{ title_attributes.addClass('node__title') }}>
+          {# Use our custom title_classes. #}
+          <h2{{ title_attributes.addClass(title_classes) }}>
             <a href="{{ url }}" rel="bookmark">{{ label }}</a>
           </h2>
         {% endif %}
