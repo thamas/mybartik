@@ -76,7 +76,10 @@
               {# Timestamp of the node creation. |date() filter can be used to
               format it. It lacks localization however.
               The last update of the node is node.changed.value.  #}
-              {# {{ node.created.value|date('Y. F d. – h.i' ) }} <br><br> #}
+              {#
+              {% set mydate = node.created.value|date(short) %}
+              {{ mydate|t }}<br><br>
+              #}
 
               {# Trying to print out content of the tags field. Does not work. #}
               {# {{ node.field_tags['#1'] }} <br><br> #}
