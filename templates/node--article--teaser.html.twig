@@ -28,5 +28,9 @@
       {{ parent() }}
     {% endblock %}
 
+    {# Create custom read more link using "path" function.
+    Default link section is removed in parent template.  #}
+    <a href="{{ path('entity.node.canonical', { 'node': node.id}) }}">{{ 'Continue reading »'|t }}</a>
+
   </article>
 {% endblock %}

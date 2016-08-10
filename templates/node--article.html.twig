@@ -6,9 +6,13 @@
  */
 #}
 
+
 {# Because this file extends a parent all of its HTML content must be within
 block tags. #}
 {% block node_submitted %}
+{#
+{{ kint() }}
+ #}
   {% if display_submitted %}
     <footer class="{{ bundle }}__meta"> {# Removed author_picture. #}
       <div{{ author_attributes }} class="{{ bundle }}__submitted"> {# Added a class. #}
@@ -23,6 +27,6 @@ block tags. #}
   {# Using our bundle variable and BEM element class naming here. #}
   <div{{ content_attributes }} class="{{ bundle }}__content">
     {# Render content without image field. #}
-    {{ content|without('field_image') }}
+    {{ content|without('field_image', 'links') }}
   </div>
 {% endblock %}
