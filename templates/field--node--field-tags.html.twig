@@ -51,6 +51,10 @@
       {% else %}
         <li{{ item.attributes }}>{{ item.content }}</li>
       {% endif %}
+      {# Lets count how many tags we have! #}
+      {% if loop.last %}
+        <span>Number of tags: {{ loop.length }}</span>
+      {% endif %}
     {% endfor %}
   </ul>
 </div>
