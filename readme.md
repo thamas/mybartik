@@ -22,6 +22,7 @@ Files to check:
 - page.html.twig
   - Kint
   - (try to) print content of different node fields
+  - Copyright message using date() filter
 - menu.html.twig
   - new file
   - added custom css classes (article link below)
@@ -29,6 +30,8 @@ Files to check:
   - preprocess to have "bundle" variable in field.html.twig
 - field.html.twig
   - new file to add "BEM Element" style class to fields
+- field--node--field-tags.html.twig
+  - added first / last classes using Twig's loop variable
 
 Related info:
 - [Twig Documentation](http://twig.sensiolabs.org/documentation)
