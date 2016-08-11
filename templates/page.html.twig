@@ -130,7 +130,13 @@
           </div>
         {% endif %}
         {# Usec the date filter to display current year. #}
-        <p style="color:white">All rights reserved 2015–{{ 'now'|date('Y') }}.</p>
+        {% set mydate = 'now'|date('Y') %}
+        <p style="color:white">
+          {% trans %}
+            All rights reserved 2015–{{ mydate|placeholder }}.
+          {% endtrans %}
+        </p>
+
       </div>
     </footer>
   </div>

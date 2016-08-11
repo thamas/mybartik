@@ -9,9 +9,10 @@
 
 {# Because this file extends a parent all of its HTML content must be within
 block tags. #}
+
 {% block node_submitted %}
 {#
-{{ kint() }}
+{{ kint(node) }}
  #}
   {% if display_submitted %}
     <footer class="{{ bundle }}__meta"> {# Removed author_picture. #}
