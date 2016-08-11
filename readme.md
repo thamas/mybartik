@@ -31,7 +31,7 @@ Files to check:
 - field.html.twig
   - new file to add "BEM Element" style class to fields
 - field--node--field-tags.html.twig
-  - added first / last classes using Twig's loop variable
+  - added first / last classes and tag count using Twig's loop variable
 
 Related info:
 - [Twig Documentation](http://twig.sensiolabs.org/documentation)
