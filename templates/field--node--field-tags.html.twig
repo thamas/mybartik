@@ -40,8 +40,17 @@
     <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
   {% endif %}
   <ul class="links field__items">
+    {# Twig's loop variable contains information about the current state, and
+    context of the loop. #}
+    {# We add "first / last" classes to first, last items. #}
     {% for item in items %}
-      <li{{ item.attributes }}>{{ item.content }}</li>
+      {% if loop.first %}
+        <li{{ item.attributes.addClass('item--first') }}>{{ item.content }}</li>
+      {% elseif loop.last %}
+        <li{{ item.attributes.addClass('item--last') }}>{{ item.content }}</li>
+      {% else %}
+        <li{{ item.attributes }}>{{ item.content }}</li>
+      {% endif %}
     {% endfor %}
   </ul>
 </div>
