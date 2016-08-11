@@ -19,6 +19,7 @@ Files to check:
 - node--article--teaser.html
   - new file, extends node--article.html.twig
   - example usage of "parent"
+  - added custom read more link using path function
 - page.html.twig
   - Kint
   - (try to) print content of different node fields
