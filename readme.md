@@ -1,6 +1,6 @@
 # MyBartik :)
 
-Fork of Drupal 8's Bartik theme for my Twig theming presentations.  
+Fork of Drupal 8's Bartik theme for my theming presentations (about Twig).  
 (Do Not use Bartik as a base theme in real projects, 'cause updates may break
 your theme!')
 It looks broken because markup was changed but CSS styling was not created for
