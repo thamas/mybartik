@@ -129,12 +129,9 @@
             {{ page.footer_fifth }}
           </div>
         {% endif %}
-        {# Usec the date filter to display current year. #}
-        {% set mydate = 'now'|date('Y') %}
+        {# Use Twig date filter to display the current year. #}
         <p style="color:white">
-          {% trans %}
-            All rights reserved 2015–{{ mydate|placeholder }}.
-          {% endtrans %}
+            All rights reserved 2015–{{ 'now'|date('Y') }}.
         </p>
 
       </div>
