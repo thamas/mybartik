@@ -44,6 +44,16 @@
           <div id="sidebar-first" class="column sidebar">
             <aside class="section" role="complementary">
 
+              {# Use date function and format_date filter to create and
+              display current date using selected date format of Drupal. #}
+              {# Use striptags filter too because "em" html tag added by
+              default. #}
+              {% set current_date = date('now').timestamp|format_date('short') %}
+              <p>
+                {% trans %}
+                  The current date is {{ current_date|placeholder|striptags }}
+                {% endtrans %}
+              </p>
 
               {# "Designer friendly…" ;) #}
 
