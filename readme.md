@@ -21,6 +21,7 @@ Files to check:
   - example usage of "parent"
   - added custom read more link using path function
 - page.html.twig
+  - Current date using format_date
   - Kint
   - (try to) print content of different node fields
   - Copyright message using date() filter
