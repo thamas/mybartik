@@ -30,6 +30,7 @@ Files to check:
   - added custom css classes (article link below)
 - mybartik.theme
   - preprocess to have "bundle" variable in field.html.twig
+  - template suggestions sample for custom block types
 - field.html.twig
   - new file to add "BEM Element" style class to fields
 - field--node--field-tags.html.twig
