@@ -117,6 +117,12 @@ function mybartik_theme_suggestions_form_alter(array &$suggestions, array $varia
   if ($variables['element']['#form_id'] == 'search_block_form') {
     $suggestions[] = 'form__search_block_form';
   }
+  // Drupaltwig Slack 15.09.2016. markconroy [8:35 PM]
+  // Today I needed to create template suggestions for a custom block type.
+  // This code worked for me:
+  // if (isset($variables['elements']['content']['#block_content'])) {
+  //   $suggestions[] = 'block__' . $variables['elements']['content']['#block_content']->bundle();
+  // }
 }
 
 /**
