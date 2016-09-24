@@ -29,8 +29,18 @@
  * @ingroup themeable
  */
 #}
+
+{# Add bundle (type) class to blocks step 1.
+Create a variable from the bundle information. I am not 100% sure that
+the if condition is needed. #}
+{% if content.body['#bundle'] is defined %}
+  {% set block_bundle = content.body['#bundle'] %}
+{% endif %}
+{# Add bundle (type) class to blocks step 2.
+Use the bundle variable to add add a bundle class to the classes array. #}
 {%
   set classes = [
+    block_bundle ? 'block--' ~ block_bundle|clean_class,
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,

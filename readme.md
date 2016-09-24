@@ -10,6 +10,18 @@ the new classes! :)
 - http://2016.drupalaton.hu/schedule#speaker-151
 
 Files to check:
+- block.html.twig
+  - add bundle (type) class to blocks
+- field.html.twig
+  - new file to add "BEM Element" style class to fields
+- field--node--field-tags.html.twig
+  - added first / last classes and tag count using Twig's loop variable
+- menu.html.twig
+  - new file
+  - added custom css classes (article link below)
+- mybartik.theme
+  - preprocess to have "bundle" variable in field.html.twig
+  - template suggestions sample for custom block types
 - node.html.twig
   - added new variable: bundle
   - use BEM style class naming where block is the content type
@@ -25,19 +37,10 @@ Files to check:
   - Kint
   - (try to) print content of different node fields
   - Copyright message using date() filter
-- menu.html.twig
-  - new file
-  - added custom css classes (article link below)
-- mybartik.theme
-  - preprocess to have "bundle" variable in field.html.twig
-  - template suggestions sample for custom block types
-- field.html.twig
-  - new file to add "BEM Element" style class to fields
-- field--node--field-tags.html.twig
-  - added first / last classes and tag count using Twig's loop variable
 
 Related info:
 - [Twig Documentation](http://twig.sensiolabs.org/documentation)
 - [Set Twig Debug](https://www.drupal.org/node/2259531)
 - [Drupal 8 Twig: add custom CSS classes to menus (based on menu name)](https://medium.com/integral-vision/drupal-8-twig-add-custom-css-classes-to-menus-based-on-menu-name-35b50142521a#.2lg9fvoeq)
 - [Applying BEM inspired classes to your Drupal 8 theme](https://thejibe.com/articles/applying-bem-inspired-classes-to-your-drupal-8-theme)
+- [ Things I Learned from the DrupalTwig Slack: Volume 1](http://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-1)
