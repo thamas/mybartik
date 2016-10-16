@@ -37,6 +37,23 @@
             {# Use kint to debug variables EG. {{ kint(page.content) }} #}
             {# {{ kint(node) }} #}
 
+            {# Timestamp of the node creation. |date() filter can be used to
+            format it. It lacks localization however.
+            The last update of the node is node.changed.value.  #}
+            {#
+            {% set mydate = node.created.value|date(short) %}
+            {{ mydate|t }}<br><br>
+            #}
+
+            {% set node_pub = node.created.value|format_date() %}
+            {% set node_upd = node.changed.value|format_date() %}
+            <p>
+              {% trans %}
+                Published: {{ node_pub|placeholder }},
+                last updated: {{ node_upd|placeholder }}
+              {% endtrans %}
+            </p>
+
             {{ page.content }}
           </section>
         </main>
@@ -45,10 +62,11 @@
             <aside class="section" role="complementary">
 
               {# Use date function and format_date filter to create and
-              display current date using selected date format of Drupal. #}
+              display current date using selected date format of Drupal.
+              Instead of |date('U') we could use .timestamp property(?) too. #}
               {# Use striptags filter too because "em" html tag added by
               default. #}
-              {% set current_date = date('now').timestamp|format_date('short') %}
+              {% set current_date = date()|date('U')|format_date('short') %}
               <p>
                 {% trans %}
                   The current date is {{ current_date|placeholder|striptags }}
@@ -82,14 +100,6 @@
               {# If we have a simple (not formatted) text field, the walue can
               be printed this way. No html tags. #}
               {# {{ node.field_text_simple.value }} <br><br> #}
-
-              {# Timestamp of the node creation. |date() filter can be used to
-              format it. It lacks localization however.
-              The last update of the node is node.changed.value.  #}
-              {#
-              {% set mydate = node.created.value|date(short) %}
-              {{ mydate|t }}<br><br>
-              #}
 
               {# Trying to print out content of the tags field. Does not work. #}
               {# {{ node.field_tags['#1'] }} <br><br> #}
@@ -141,7 +151,7 @@
         {% endif %}
         {# Use Twig date filter to display the current year. #}
         <p style="color:white">
-            All rights reserved 2015–{{ 'now'|date('Y') }}.
+          {{ 'All rights reserved 2015–'|t }}{{ 'now'|date('Y') }}.
         </p>
 
       </div>
