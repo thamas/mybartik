@@ -35,24 +35,24 @@
             <a id="main-content" tabindex="-1"></a>
 
             {# Use kint to debug variables EG. {{ kint(page.content) }} #}
-            {# {{ kint(node) }} #}
+            {# {{ kint() }} #}
 
-            {# Timestamp of the node creation. |date() filter can be used to
-            format it. It lacks localization however.
-            The last update of the node is node.changed.value.  #}
-            {#
-            {% set mydate = node.created.value|date(short) %}
-            {{ mydate|t }}<br><br>
-            #}
+            {# Use timestamp of the node creation / last node update
+            and format_date filter to create and display current date
+            using selected date format of Drupal. #}
+            {# Use striptags filter too because "em" html tag added by
+            placeholder. #}
+            {% if node.created.value and node.changed.value is defined %}
+              {% set node_pub = node.created.value|format_date() %}
+              {% set node_upd = node.changed.value|format_date() %}
+              <p>
+                {% trans %}
+                  Published: {{ node_pub|placeholder|striptags }},
+                  last updated: {{ node_upd|placeholder|striptags }}
+                {% endtrans %}
+              </p>
+            {% endif %}
 
-            {% set node_pub = node.created.value|format_date() %}
-            {% set node_upd = node.changed.value|format_date() %}
-            <p>
-              {% trans %}
-                Published: {{ node_pub|placeholder }},
-                last updated: {{ node_upd|placeholder }}
-              {% endtrans %}
-            </p>
 
             {{ page.content }}
           </section>
@@ -65,7 +65,7 @@
               display current date using selected date format of Drupal.
               Instead of |date('U') we could use .timestamp property(?) too. #}
               {# Use striptags filter too because "em" html tag added by
-              default. #}
+              placeholder. #}
               {% set current_date = date()|date('U')|format_date('short') %}
               <p>
                 {% trans %}
