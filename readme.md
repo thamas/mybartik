@@ -33,10 +33,11 @@ Files to check:
   - example usage of "parent"
   - added custom read more link using path function
 - page.html.twig
+  - Copyright message using date() filter
   - Current date using format_date
+  - Node created and updated date
   - Kint
   - (try to) print content of different node fields
-  - Copyright message using date() filter
 
 ## Related info:
 - [Twig Documentation](http://twig.sensiolabs.org/documentation)
