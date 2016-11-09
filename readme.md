@@ -1,8 +1,8 @@
 # MyBartik :)
 
-Fork of Drupal 8's Bartik theme for my theming presentations (about Twig).  
+Fork of Drupal 8's Bartik theme for my theming presentations (about Twig).
 (Do Not use Bartik as a base theme in real projects, 'cause updates may break
-your theme!')  
+your theme!')
 It looks broken because markup was changed but CSS styling was not created for
 the new classes! :)
 
@@ -44,7 +44,8 @@ Files to check:
 - [Set Twig Debug](https://www.drupal.org/node/2259531)
 - [Drupal 8 Twig: add custom CSS classes to menus (based on menu name)](https://medium.com/integral-vision/drupal-8-twig-add-custom-css-classes-to-menus-based-on-menu-name-35b50142521a#.2lg9fvoeq)
 - [Applying BEM inspired classes to your Drupal 8 theme](https://thejibe.com/articles/applying-bem-inspired-classes-to-your-drupal-8-theme)
-- [ Things I Learned from the DrupalTwig Slack: Volume 1](http://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-1)
+- [Things I Learned from the DrupalTwig Slack: Volume 1](http://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-1)
+- [Things I Learned from the DrupalTwig Slack: Volume 2](http://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-2)
 
 ## Theming related modules:
 - https://www.drupal.org/project/components – Registers “component libraries” defined by your theme or module as Twig namespaces.
