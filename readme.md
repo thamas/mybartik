@@ -46,6 +46,7 @@ Files to check:
 - [Applying BEM inspired classes to your Drupal 8 theme](https://thejibe.com/articles/applying-bem-inspired-classes-to-your-drupal-8-theme)
 - [Things I Learned from the DrupalTwig Slack: Volume 1](http://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-1)
 - [Things I Learned from the DrupalTwig Slack: Volume 2](http://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-2)
+- [Pistachio: "…to serve as an example of all the features a theme can have"](https://www.drupal.org/project/pistachio)
 
 ## Theming related modules:
 - https://www.drupal.org/project/components – Registers “component libraries” defined by your theme or module as Twig namespaces.
