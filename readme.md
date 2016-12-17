@@ -2,14 +2,12 @@
 
 Fork of Drupal 8's Bartik theme for my theming presentations (about Twig).
 (Do Not use Bartik as a base theme in real projects, 'cause updates may break
-your theme!')
-It looks broken because markup was changed but CSS styling was not created for
-the new classes! :)
+your theme!)
 
-- https://www.drupal.hu/konferencia/2016/program#smink
-- http://2016.drupalaton.hu/schedule#speaker-151
+Warning: It looks broken because markup was changed but CSS styling was not
+written for the new classes! :)
 
-Files to check:
+## Files to check:
 - block.html.twig
   - add bundle (type) class to blocks
 - field.html.twig
@@ -39,14 +37,16 @@ Files to check:
   - Kint
   - (try to) print content of different node fields
 
-## Related info:
+## Things to read:
 - [Twig Documentation](http://twig.sensiolabs.org/documentation)
 - [Set Twig Debug](https://www.drupal.org/node/2259531)
 - [Drupal 8 Twig: add custom CSS classes to menus (based on menu name)](https://medium.com/integral-vision/drupal-8-twig-add-custom-css-classes-to-menus-based-on-menu-name-35b50142521a#.2lg9fvoeq)
+- [Translatable, custom dates in Twig templates of Drupal 8](https://medium.com/p/140c91330c2b)
 - [Applying BEM inspired classes to your Drupal 8 theme](https://thejibe.com/articles/applying-bem-inspired-classes-to-your-drupal-8-theme)
 - [Things I Learned from the DrupalTwig Slack: Volume 1](http://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-1)
 - [Things I Learned from the DrupalTwig Slack: Volume 2](http://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-2)
 - [Pistachio: "…to serve as an example of all the features a theme can have"](https://www.drupal.org/project/pistachio)
+- [Top Thirteen Drupal Twig Helper Modules](https://www.xenomedia.com/blog/top-thirteen-drupal-twig-helper-modules)
 
 ## Theming related modules:
 - https://www.drupal.org/project/components – Registers “component libraries” defined by your theme or module as Twig namespaces.
