@@ -53,3 +53,4 @@ written for the new classes! :)
 - https://www.drupal.org/project/twig_field_value
 - https://www.drupal.org/project/themable_forms
 - https://www.drupal.org/sandbox/mikeker/2612132 (Twig Globals)
+- https://www.drupal.org/project/ui_patterns – "Define and expose self-contained UI patterns as Drupal plugins and use them seamlessly in your panels, field groups or Display Suite view modes.""
