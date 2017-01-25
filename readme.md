@@ -47,10 +47,11 @@ written for the new classes! :)
 - [Things I Learned from the DrupalTwig Slack: Volume 2](http://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-2)
 - [Pistachio: "…to serve as an example of all the features a theme can have"](https://www.drupal.org/project/pistachio)
 - [Top Thirteen Drupal Twig Helper Modules](https://www.xenomedia.com/blog/top-thirteen-drupal-twig-helper-modules)
+- [Introducing the UI Patterns module: use atomic UI components everywhere in Drupal 8](http://nuvole.org/blog/2017/jan/23/ui-patterns-module-re-use-ui-components-everywhere-in-drupal-8)
 
 ## Theming related modules:
 - https://www.drupal.org/project/components – Registers “component libraries” defined by your theme or module as Twig namespaces.
 - https://www.drupal.org/project/twig_field_value
 - https://www.drupal.org/project/themable_forms
 - https://www.drupal.org/sandbox/mikeker/2612132 (Twig Globals)
-- https://www.drupal.org/project/ui_patterns – "Define and expose self-contained UI patterns as Drupal plugins and use them seamlessly in your panels, field groups or Display Suite view modes.""
+- https://www.drupal.org/project/ui_patterns – "Define and expose self-contained UI patterns as Drupal plugins and use them seamlessly in your Paragraphs, Panels, Field Groups or Display Suite view modes.""
